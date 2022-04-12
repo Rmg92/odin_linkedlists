@@ -1,0 +1,1 @@
+The objective of this project is to practice creating linked list on ruby
