@@ -52,8 +52,9 @@ class LinkedList
 
   def size
     # returns the total number of nodes in the list
+    return 0 if @head.nil?
+
     size = 1
-    0 if @head.nil?
     tmp_node = @head
     until tmp_node.next_node.nil?
       tmp_node = tmp_node.next_node

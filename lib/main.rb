@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
 require_relative 'linked_lists'
 
 list = LinkedList.new
 
+puts list.size
 # Tests for append method
 list.append(1)
 puts list.size
