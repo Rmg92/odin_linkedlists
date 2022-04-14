@@ -63,7 +63,7 @@ class LinkedList
   end
 
   def contains?(_value)
-    # contains?(value)
+    # returns true if the passed in value is in the list and otherwise returns false.
     nil
   end
 
