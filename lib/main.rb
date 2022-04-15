@@ -45,3 +45,11 @@ list.pop
 puts list.tail.value
 list.pop
 puts list.tail.value
+list.pop
+list.pop
+puts list.tail.value
+
+# Tests for contains? method
+puts list.contains?(1)
+puts list.contains?(4)
+puts list.contains?(5)
