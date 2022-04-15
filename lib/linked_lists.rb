@@ -98,9 +98,17 @@ class LinkedList
     @tail = tmp_node
   end
 
-  def contains?(_value)
+  def contains?(value)
     # returns true if the passed in value is in the list and otherwise returns false.
-    nil
+    tmp_node = @head
+    node_index = 0
+    until size == node_index
+      return true if tmp_node.value == value
+
+      tmp_node = tmp_node.next_node
+      node_index += 1
+    end
+    false
   end
 
   def find(_value)
