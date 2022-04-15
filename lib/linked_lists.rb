@@ -70,7 +70,7 @@ class LinkedList
 
   def tail
     # returns the last node in the list
-    nil
+    @tail
   end
 
   def at(_index)
