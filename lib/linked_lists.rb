@@ -65,6 +65,7 @@ class LinkedList
 
   def head
     # returns the first node in the list
+    @head
   end
 
   def tail
