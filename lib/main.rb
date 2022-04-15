@@ -38,3 +38,10 @@ puts list.at(0)
 puts list.at(7)
 puts list.at(8)
 puts list.at(10)
+
+# Tests for pop method
+puts list.tail.value
+list.pop
+puts list.tail.value
+list.pop
+puts list.tail.value
