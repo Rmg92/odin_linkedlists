@@ -111,9 +111,17 @@ class LinkedList
     false
   end
 
-  def find(_value)
+  def find(value)
     # returns the index of the node containing value, or nil if not found
-    nil
+    return nil unless contains?(value)
+
+    tmp_node = @head
+    node_index = 0
+    until value == tmp_node.value
+      tmp_node = tmp_node.next_node
+      node_index += 1
+    end
+    node_index
   end
 
   def to_s
