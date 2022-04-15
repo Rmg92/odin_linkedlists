@@ -4,9 +4,6 @@ require_relative 'linked_lists'
 
 list = LinkedList.new
 
-puts list.head
-puts list.head.value
-puts list.head.next_node
 # Test size method
 puts list.size
 
@@ -35,3 +32,9 @@ puts list.head
 
 # Tests for tail method
 puts list.tail
+
+# Tests for at method
+puts list.at(0)
+puts list.at(7)
+puts list.at(8)
+puts list.at(10)
