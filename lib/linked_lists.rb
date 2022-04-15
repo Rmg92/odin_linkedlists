@@ -88,7 +88,14 @@ class LinkedList
 
   def pop
     # removes the last element from the list
-    nil
+    tmp_node = @head
+    node_index = 1
+    until (size - 1) == node_index
+      tmp_node = tmp_node.next_node
+      node_index += 1
+    end
+    tmp_node.next_node = nil
+    @tail = tmp_node
   end
 
   def contains?(_value)
