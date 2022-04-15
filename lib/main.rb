@@ -53,3 +53,9 @@ puts list.tail.value
 puts list.contains?(1)
 puts list.contains?(4)
 puts list.contains?(5)
+
+# Tests for find method
+puts list.find(5)
+puts list.find(3)
+puts list.find(1)
+puts list.find(4)
