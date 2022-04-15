@@ -59,3 +59,6 @@ puts list.find(5)
 puts list.find(3)
 puts list.find(1)
 puts list.find(4)
+
+# Tests for to_s method
+puts list.to_s
