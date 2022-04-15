@@ -73,9 +73,17 @@ class LinkedList
     @tail
   end
 
-  def at(_index)
+  def at(index)
     # returns the node at the given index
-    nil
+    return 'Linked list is smaller than the entered value!' if (size - 1) < index
+
+    tmp_node = @head
+    node_index = 0
+    until node_index == index
+      tmp_node = tmp_node.next_node
+      node_index += 1
+    end
+    tmp_node
   end
 
   def pop
