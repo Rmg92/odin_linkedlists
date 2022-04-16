@@ -64,9 +64,19 @@ puts list.find(4)
 puts list.to_s
 
 # Tests for insert_at method
-puts list.insert_at(10, 0)
+list.insert_at(10, 0)
 puts list.to_s
-puts list.insert_at('Hello', 3)
+list.insert_at('Hello', 3)
 puts list.to_s
-puts list.insert_at('Hello', 6)
+list.insert_at('Hello', 6)
+puts list.to_s
+
+# Tests for removes_at method
+list.remove_at(3)
+puts list.to_s
+list.remove_at(4)
+puts list.to_s
+list.remove_at(0)
+puts list.to_s
+list.remove_at(6)
 puts list.to_s
