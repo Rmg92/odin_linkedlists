@@ -6,6 +6,7 @@ require 'pry'
 # this class represents the full list
 class LinkedList
   attr_accessor :name
+  attr_reader :head, :tail
 
   def initialize
     @head = nil
@@ -27,9 +28,6 @@ class LinkedList
       @tail.next_node = new_node
       @tail = new_node
     end
-    # For testing, erase when not needed
-    p @head
-    p @tail
   end
 
   def prepend(value)
@@ -46,9 +44,6 @@ class LinkedList
       new_node.next_node = @head
       @head = new_node
     end
-    # For testing, erase when not needed
-    p @head
-    p @tail
   end
 
   def size
@@ -62,16 +57,6 @@ class LinkedList
       size += 1
     end
     size
-  end
-
-  def head
-    # returns the first node in the list
-    @head
-  end
-
-  def tail
-    # returns the last node in the list
-    @tail
   end
 
   def at(index)
@@ -128,7 +113,7 @@ class LinkedList
   def to_s
     # represent your LinkedList objects as strings, so you can print them out and preview them in the console.
     # The format should be: ( value ) -> ( value ) -> ( value ) -> nil
-    list = ""
+    list = ''
     tmp_node = @head
     node_index = 0
     until size == node_index
@@ -136,7 +121,7 @@ class LinkedList
       tmp_node = tmp_node.next_node
       node_index += 1
     end
-    list += "nil"
+    list += 'nil'
     list
   end
 
@@ -152,7 +137,7 @@ class LinkedList
     node_index = 0
     tmp_node = @head
     until node_index == index
-      if node_index == index -1
+      if node_index == index - 1
         new_node.next_node = tmp_node.next_node
         tmp_node.next_node = new_node
       end
