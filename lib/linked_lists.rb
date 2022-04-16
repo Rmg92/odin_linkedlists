@@ -127,7 +127,16 @@ class LinkedList
   def to_s
     # represent your LinkedList objects as strings, so you can print them out and preview them in the console.
     # The format should be: ( value ) -> ( value ) -> ( value ) -> nil
-    nil
+    list = ""
+    tmp_node = @head
+    node_index = 0
+    until size == node_index
+      list += "( #{tmp_node.value} ) -> "
+      tmp_node = tmp_node.next_node
+      node_index += 1
+    end
+    list += "nil"
+    list
   end
 
   # Extra Credit
