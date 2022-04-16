@@ -145,7 +145,7 @@ class LinkedList
     # inserts a new node with the provided value at the given index.
     return prepend(value) if index.zero?
 
-    return 'Linked list is smaller than the entered value!' if (size - 1) < index
+    return puts 'Linked list is smaller than the entered value!' if (size - 1) < index
 
     new_node = Node.new
     new_node.value = value
@@ -161,7 +161,20 @@ class LinkedList
     end
   end
 
-  def remove_at(_index)
+  def remove_at(index)
     # removes the node at the given index.
+    return puts 'Linked list is smaller than the entered value!' if (size - 1) < index
+
+    node_index = 0
+    tmp_node = @head
+    if index.zero?
+      @head = @head.next_node
+    else
+      until node_index == index - 1
+        tmp_node = tmp_node.next_node
+        node_index += 1
+      end
+      tmp_node.next_node = tmp_node.next_node.next_node
+    end
   end
 end
