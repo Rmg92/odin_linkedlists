@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'node'
+require 'pry'
 
 # this class represents the full list
 class LinkedList
@@ -140,13 +141,27 @@ class LinkedList
   end
 
   # Extra Credit
-  def insert_at(_value, _index)
+  def insert_at(value, index)
     # inserts a new node with the provided value at the given index.
-    nil
+    return prepend(value) if index.zero?
+
+    return 'Linked list is smaller than the entered value!' if (size - 1) < index
+
+    new_node = Node.new
+    new_node.value = value
+    node_index = 0
+    tmp_node = @head
+    until node_index == index
+      if node_index == index -1
+        new_node.next_node = tmp_node.next_node
+        tmp_node.next_node = new_node
+      end
+      tmp_node = tmp_node.next_node
+      node_index += 1
+    end
   end
 
   def remove_at(_index)
     # removes the node at the given index.
-    nil
   end
 end
