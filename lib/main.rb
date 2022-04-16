@@ -62,3 +62,11 @@ puts list.find(4)
 
 # Tests for to_s method
 puts list.to_s
+
+# Tests for insert_at method
+puts list.insert_at(10, 0)
+puts list.to_s
+puts list.insert_at('Hello', 3)
+puts list.to_s
+puts list.insert_at('Hello', 6)
+puts list.to_s
