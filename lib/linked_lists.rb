@@ -15,16 +15,13 @@ class LinkedList
 
   def append(value)
     # adds a new node containing value to the end of the list
-    new_node = Node.new
-    new_node.value = value
+    new_node = Node.new(value)
     if @head.nil?
       @head = new_node
     elsif @head.next_node.nil?
       @head.next_node = new_node
       @tail = new_node
     else
-      tmp_node = @head
-      tmp_node = tmp_node.next_node until tmp_node.next_node.nil?
       @tail.next_node = new_node
       @tail = new_node
     end
@@ -32,18 +29,8 @@ class LinkedList
 
   def prepend(value)
     # adds a new node containing value to the start of the list
-    new_node = Node.new
-    new_node.value = value
-    if @head.nil?
-      @head = new_node
-    elsif @tail.nil?
-      @tail = @head
-      @head = new_node
-      @head.next_node = @tail
-    else
-      new_node.next_node = @head
-      @head = new_node
-    end
+    new_node = Node.new(value, @head)
+    @head = new_node
   end
 
   def size
@@ -132,34 +119,24 @@ class LinkedList
 
     return puts 'Linked list is smaller than the entered value!' if (size - 1) < index
 
-    new_node = Node.new
-    new_node.value = value
-    node_index = 0
-    tmp_node = @head
-    until node_index == index
-      if node_index == index - 1
-        new_node.next_node = tmp_node.next_node
-        tmp_node.next_node = new_node
-      end
-      tmp_node = tmp_node.next_node
-      node_index += 1
-    end
+    new_node = Node.new(value)
+    new_node.next_node = at(index - 1).next_node
+    at(index - 1).next_node = new_node
   end
 
   def remove_at(index)
     # removes the node at the given index.
     return puts 'Linked list is smaller than the entered value!' if (size - 1) < index
 
-    node_index = 0
-    tmp_node = @head
     if index.zero?
       @head = @head.next_node
     else
-      until node_index == index - 1
-        tmp_node = tmp_node.next_node
-        node_index += 1
-      end
-      tmp_node.next_node = tmp_node.next_node.next_node
+      at(index - 1).next_node = at(index - 1).next_node.next_node
+    #  until node_index == index - 1
+    #    tmp_node = tmp_node.next_node
+    #    node_index += 1
+    #  end
+    #  tmp_node.next_node = tmp_node.next_node.next_node
     end
   end
 end

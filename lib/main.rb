@@ -12,7 +12,6 @@ puts list.to_s
 list.append('Bye')
 puts list.to_s
 
-
 # Tests for prepend/size method
 list.prepend(1)
 puts list.to_s
