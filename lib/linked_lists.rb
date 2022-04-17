@@ -132,11 +132,6 @@ class LinkedList
       @head = @head.next_node
     else
       at(index - 1).next_node = at(index - 1).next_node.next_node
-    #  until node_index == index - 1
-    #    tmp_node = tmp_node.next_node
-    #    node_index += 1
-    #  end
-    #  tmp_node.next_node = tmp_node.next_node.next_node
     end
   end
 end
